@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sima Apparel | Order</title>
+<style>
+:root{--black:#080808;--panel:#171717;--gold:#d4af37;--light:#f6df8b;--muted:#bdb5a2}
+*{box-sizing:border-box}body{margin:0;background:var(--black);color:white;font-family:Arial,sans-serif}
+nav{padding:18px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #58471b;position:sticky;top:0;background:#090909;z-index:2}
+.logo{font-size:21px;font-weight:bold;letter-spacing:2px;color:var(--light)}
+nav a{color:var(--light);text-decoration:none;font-size:13px}
+.hero{text-align:center;padding:45px 18px;background:radial-gradient(circle at top,#3a2b0d,#080808 65%)}
+.hero h1{font-size:38px;margin:8px 0;color:var(--light)}.hero p{color:var(--muted);line-height:1.6}
+.btn{display:inline-block;background:linear-gradient(135deg,#f6df8b,#b58a20);color:#111;padding:13px 22px;border:0;border-radius:30px;font-weight:bold;text-decoration:none;cursor:pointer}
+.section{padding:30px 6%;max-width:900px;margin:auto}.section h2{color:var(--light);text-align:center}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.product{background:var(--panel);border:1px solid #765d20;border-radius:16px;padding:14px}
+.photo{height:120px;border-radius:12px;background:linear-gradient(135deg,#f6df8b,#9b721c);display:flex;align-items:center;justify-content:center;color:#111;font-weight:bold}
+.product h3{font-size:16px}.price{color:var(--light);font-weight:bold}
+.product button{margin-top:10px;background:transparent;color:var(--light);border:1px solid var(--gold);border-radius:20px;padding:8px 12px}
+form{background:var(--panel);border:1px solid #765d20;border-radius:18px;padding:20px}
+label{display:block;margin-top:13px;color:var(--light);font-size:13px}
+input,select,textarea{width:100%;margin-top:6px;padding:12px;border-radius:9px;border:1px solid #5f4a1d;background:#0c0c0c;color:white;font-size:14px}
+textarea{min-height:90px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.note{font-size:12px;color:var(--muted);line-height:1.6}
+#result{display:none;margin-top:18px;padding:16px;border:1px solid #5f9d55;background:#122013;border-radius:12px;color:#d5ffd0}
+footer{text-align:center;padding:25px;color:#aaa;border-top:1px solid #3f3318;font-size:12px}
+@media(max-width:450px){.row{grid-template-columns:1fr}.products{grid-template-columns:1fr 1fr}.hero h1{font-size:32px}}
+</style>
+</head>
+<body>
+<nav><div class="logo">SIMA APPAREL</div><a href="#order">ORDER NOW ↗</a></nav>
+
+<section class="hero">
+<div style="color:var(--light);letter-spacing:3px;font-size:12px">PREMIUM CLOTHING</div>
+<h1>Style. Comfort. You.</h1>
+<p>अपना पसंदीदा कपड़ा चुनें और नीचे ऑर्डर की जानकारी भरें।</p>
+<a class="btn" href="#collection">Collection देखें</a>
+</section>
+
+<section class="section" id="collection">
+<h2>Our Collection</h2>
+<div class="products">
+<div class="product"><div class="photo">DUPATTA</div><h3>Premium Dupatta</h3><div class="price">₹199</div><button type="button" onclick="selectProduct('Premium Dupatta')">Order करें</button></div>
+<div class="product"><div class="photo">T-SHIRT</div><h3>Oversize T-Shirt</h3><div class="price">₹249</div><button type="button" onclick="selectProduct('Oversize T-Shirt')">Order करें</button></div>
+<div class="product"><div class="photo">SUIT</div><h3>Elegant Suit</h3><div class="price">₹599</div><button type="button" onclick="selectProduct('Elegant Suit')">Order करें</button></div>
+<div class="product"><div class="photo">JEANS</div><h3>Stylish Jeans</h3><div class="price">₹699</div><button type="button" onclick="selectProduct('Stylish Jeans')">Order करें</button></div>
+</div>
+</section>
+
+<section class="section" id="order">
+<h2>Order Details भरें</h2>
+<form id="orderForm">
+<label>आपका नाम
+<input id="name" required placeholder="पूरा नाम">
+</label>
+<div class="row">
+<div><label>मोबाइल नंबर<input id="phone" type="tel" pattern="[0-9]{10}" required placeholder="10 अंकों का नंबर"></label></div>
+<div><label>पिनकोड<input id="pincode" inputmode="numeric" pattern="[0-9]{6}" required placeholder="6 अंकों का पिनकोड"></label></div>
+</div>
+<label>प्रोडक्ट
+<select id="product" required>
+<option value="">प्रोडक्ट चुनें</option>
+<option>Premium Dupatta - ₹199</option>
+<option>Oversize T-Shirt - ₹249</option>
+<option>Elegant Suit - ₹599</option>
+<option>Stylish Jeans - ₹699</option>
+</select>
+</label>
+<div class="row">
+<div><label>Quantity<input id="qty" type="number" min="1" max="10" value="1" required></label></div>
+<div><label>Payment
+<select id="payment" required><option>Cash on Delivery</option><option>UPI (बाद में पुष्टि)</option></select>
+</label></div>
+</div>
+<label>पूरा पता / Location
+<textarea id="address" required placeholder="मकान नंबर, मोहल्ला, गाँव/शहर, जिला, राज्य"></textarea>
+</label>
+<label>अतिरिक्त जानकारी (वैकल्पिक)
+<textarea id="note" placeholder="साइज, रंग या कोई विशेष बात"></textarea>
+</label>
+<p class="note">🔒 यह डेमो ऑर्डर की जानकारी इसी ब्राउज़र में सेव करता है। अभी यह अपने-आप आपके पास ऑर्डर नहीं भेजता। असली ऑर्डर नोटिफिकेशन के लिए आगे backend या WhatsApp नंबर जोड़ना होगा।</p>
+<button class="btn" type="submit">ऑर्डर सेव करें</button>
+<div id="result"></div>
+</form>
+</section>
+
+<footer>© 2026 Sima Apparel • Premium Clothing Collection</footer>
+
+<script>
+function selectProduct(name){
+  const select=document.getElementById('product');
+  [...select.options].forEach((o,i)=>{if(o.textContent.toLowerCase().includes(name.toLowerCase()))select.selectedIndex=i});
+  document.getElementById('order').scrollIntoView({behavior:'smooth'});
+}
+document.getElementById('orderForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const order={
+    name:document.getElementById('name').value,
+    phone:document.getElementById('phone').value,
+    pincode:document.getElementById('pincode').value,
+    product:document.getElementById('product').value,
+    qty:document.getElementById('qty').value,
+    payment:document.getElementById('payment').value,
+    address:document.getElementById('address').value,
+    note:document.getElementById('note').value,
+    savedAt:new Date().toLocaleString()
+  };
+  localStorage.setItem('simaLatestOrder',JSON.stringify(order));
+  document.getElementById('result').style.display='block';
+  document.getElementById('result').innerHTML='<b>✅ ऑर्डर की जानकारी सेव हो गई!</b><br><br>नाम: '+order.name+'<br>प्रोडक्ट: '+order.product+'<br>Payment: '+order.payment+'<br><br><span style="font-size:12px">ध्यान दें: यह केवल इस फोन/ब्राउज़र में सेव हुई है।</span>';
+});
+</script>
+</body>
+</html>
