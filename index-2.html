@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sima Apparel | Premium Fashion</title>
+<style>
+:root{
+  --black:#080808;
+  --panel:#151515;
+  --gold:#d4af37;
+  --gold-light:#f6df8b;
+  --muted:#b9b3a3;
+  --line:rgba(212,175,55,.35);
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:#fff;font-family:Arial,Helvetica,sans-serif}
+a{text-decoration:none;color:inherit}
+.navbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:16px 6%;background:rgba(8,8,8,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.logo{font-size:22px;font-weight:800;letter-spacing:2px;color:var(--gold-light)}
+.navlinks{display:flex;gap:18px;font-size:13px;color:#eee}
+.navlinks a:hover{color:var(--gold-light)}
+.hero{position:relative;overflow:hidden;padding:82px 7% 72px;background:radial-gradient(circle at 80% 20%,rgba(212,175,55,.22),transparent 34%),linear-gradient(135deg,#17120a,#080808 65%);border-bottom:1px solid var(--line)}
+.hero:after{content:"";position:absolute;width:260px;height:260px;border:1px solid rgba(212,175,55,.25);border-radius:50%;right:-80px;top:-70px;box-shadow:0 0 0 25px rgba(212,175,55,.04),0 0 0 50px rgba(212,175,55,.03)}
+.eyebrow{color:var(--gold-light);letter-spacing:4px;font-size:12px;text-transform:uppercase}
+.hero h1{font-size:clamp(36px,8vw,70px);line-height:1.05;margin:18px 0 14px;max-width:700px}
+.hero h1 span{color:var(--gold-light)}
+.hero p{max-width:520px;color:var(--muted);font-size:16px;line-height:1.7}
+.btn{display:inline-block;margin-top:18px;padding:13px 22px;border-radius:999px;background:linear-gradient(135deg,#f6df8b,#b78b20);color:#111;font-weight:800;box-shadow:0 8px 25px rgba(212,175,55,.18)}
+.btn.secondary{margin-left:8px;background:transparent;color:var(--gold-light);border:1px solid var(--gold)}
+.section{padding:42px 6%}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:22px}
+.section h2{font-size:30px;margin:0;color:var(--gold-light)}
+.section-head p{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{position:relative;overflow:hidden;background:linear-gradient(145deg,#1b1b1b,#101010);border:1px solid var(--line);border-radius:18px;padding:12px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--gold-light)}
+.photo{height:155px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 30% 20%,#f6df8b,#a77b1e 45%,#30230d);color:#111;font-weight:900;letter-spacing:2px}
+.tag{display:inline-block;margin-top:13px;padding:5px 8px;border:1px solid var(--line);border-radius:999px;color:var(--gold-light);font-size:10px}
+.card h3{font-size:17px;margin:10px 0;color:#fff}
+.bottom{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.price{color:var(--gold-light);font-size:18px;font-weight:800}
+.buy{border:1px solid var(--gold);border-radius:999px;padding:8px 11px;color:var(--gold-light);font-size:11px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.feature{padding:18px 12px;text-align:center;background:#111;border:1px solid var(--line);border-radius:15px}
+.feature strong{display:block;color:var(--gold-light);font-size:13px;margin-bottom:7px}
+.feature span{color:var(--muted);font-size:11px}
+.cta{margin:0 6% 42px;padding:28px 22px;text-align:center;border:1px solid var(--line);border-radius:20px;background:linear-gradient(135deg,#211a0d,#0f0f0f)}
+.cta h2{margin:0;color:var(--gold-light)}
+.cta p{color:var(--muted);font-size:13px}
+footer{text-align:center;padding:28px 15px;border-top:1px solid var(--line);color:#a9a9a9;font-size:12px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.photo{height:190px}.hero{padding-left:12%;padding-right:12%}}
+@media(max-width:420px){.navlinks{gap:9px;font-size:11px}.hero{padding-top:58px}.btn{padding:11px 15px;font-size:12px}.features{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:8px}}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo">SIMA APPAREL</div>
+  <div class="navlinks"><a href="#collection">Collection</a><a href="#about">Why Us</a><a href="#contact">Contact</a></div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">Premium Clothing Studio</div>
+  <h1>Wear Your <span>Confidence.</span></h1>
+  <p>Discover elegant dupattas, stylish suits, premium T-shirts and trendy jeans—selected for your everyday style.</p>
+  <a class="btn" href="#collection">Explore Collection ↗</a>
+  <a class="btn secondary" href="#contact">Contact Us</a>
+</section>
+
+<section class="section" id="collection">
+  <div class="section-head">
+    <div><h2>Featured Collection</h2><p>Simple style. Premium feel.</p></div>
+  </div>
+  <div class="grid">
+    <article class="card"><div class="photo">DUPATTA</div><span class="tag">BESTSELLER</span><h3>Premium Dupatta</h3><div class="bottom"><span class="price">₹199</span><a class="buy" href="#contact">Enquire</a></div></article>
+    <article class="card"><div class="photo">T-SHIRT</div><span class="tag">TRENDING</span><h3>Oversize T-Shirt</h3><div class="bottom"><span class="price">₹249</span><a class="buy" href="#contact">Enquire</a></div></article>
+    <article class="card"><div class="photo">SUIT</div><span class="tag">ELEGANT</span><h3>Elegant Suit</h3><div class="bottom"><span class="price">₹599</span><a class="buy" href="#contact">Enquire</a></div></article>
+    <article class="card"><div class="photo">JEANS</div><span class="tag">NEW STYLE</span><h3>Stylish Jeans</h3><div class="bottom"><span class="price">₹699</span><a class="buy" href="#contact">Enquire</a></div></article>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="section-head"><div><h2>Why Sima Apparel?</h2><p>Fashion made simple for you.</p></div></div>
+  <div class="features">
+    <div class="feature"><strong>✦ Premium Look</strong><span>Elegant black and gold style.</span></div>
+    <div class="feature"><strong>✦ Curated Styles</strong><span>Clothing options for every mood.</span></div>
+    <div class="feature"><strong>✦ Personal Support</strong><span>Connect with us for product details.</span></div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <h2>Find Your Next Favourite Look</h2>
+  <p>For product availability, size and order details, contact Sima Apparel.</p>
+  <a class="btn" href="https://wa.me/" target="_blank">Contact on WhatsApp ↗</a>
+</section>
+
+<footer>© 2026 Sima Apparel • Premium Clothing Collection</footer>
+</body>
+</html>
